@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-11-16T09:29:49.000Z</updated>
+  <updated>2019-11-21T03:58:56.218Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>live2d</title>
+    <link href="/2019/11/21/live2d/"/>
+    <id>/2019/11/21/live2d/</id>
+    <published>2019-11-21T03:56:32.000Z</published>
+    <updated>2019-11-21T03:58:56.218Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/live2d_models/Aboutmodel/css/live2d.css&quot;&gt;
+&lt;div id=&quot;landlord&quot;&gt;
+    &lt;div class=&quot;message&quot; style=&quot;opacity:
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hexo-Theme-Sakura</title>
