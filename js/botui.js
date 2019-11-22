@@ -122,11 +122,11 @@ function bot_ui_ini() {
                 }).then(function () {
                     botui.message.add({
                         delay: 600,
-                        content: "![...](https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v1.7/lpzn.jpg)"
+                        content: "接下来 看看我的博客吧ヽ(･ω･´ﾒ)"
                     }).then(function () {
                         botui.message.add({
                             delay: 600,
-                            content: "接下来 看看我的博客吧ヽ(･ω･´ﾒ)"
+                            content: "![...](https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v1.7/lpzn.jpg)"
                         })
                     })
                 })
