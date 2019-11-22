@@ -104,10 +104,6 @@ function bot_ui_ini() {
                     delay: 1100,
                     content: "就想建个博客记录自己写bug的一系列过程(*ﾟДﾟ*) "
                 }).then(function () {
-                    botui.message.add({
-                        delay: 1100,
-                        content: "就想建个博客记录自己写bug的一系列过程(*ﾟДﾟ*) "
-                    }).then(function () {
                         botui.action.button({
                             delay: 1500,
                             action: [{
@@ -117,13 +113,22 @@ function bot_ui_ini() {
                          }).then(function (a) {
                         end()
                     })
-                })
             })
         },
             end = function () {
                 botui.message.add({
-                    delay: 600,
-                    content: "![...](https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v1.7/lpzn.jpg)"
+                    delay: 1100,
+                    content: "!?(･_･;? 我永远喜欢椎名真白！"
+                }).then(function () {
+                    botui.message.add({
+                        delay: 600,
+                        content: "![...](https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v1.7/lpzn.jpg)"
+                    }).then(function () {
+                        botui.message.add({
+                            delay: 600,
+                            content: "接下来 看看我的博客吧ヽ(･ω･´ﾒ)"
+                        })
+                    })
                 })
             })
         }
