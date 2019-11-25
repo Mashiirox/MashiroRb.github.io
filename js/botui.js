@@ -26,32 +26,24 @@ function bot_ui_ini() {
     }).then(function () {
         botui.message.add({
             delay: 1100,
-            content: "你找到我啦|●´∀`|σ"
+            content: "你找到我啦"
         }).then(function () {
                 botui.action.button({
                     delay: 1600,
                     action: [{
-                        text: "嗯！(/≧▽≦)/",
+                        text: "嗯！🤣",
                         value: "sure"
                     }]
                 }).then(function (a) {
-                    "sure" == a.value && sure();
+                    secondpart()
                 })
             })
-        });
-    var sure = function () {
-            botui.message.add({
-                delay: 600,
-                content: "😇"
-            }).then(function () {
-                secondpart()
-            })
-        },
+        }),
         
         secondpart = function () {
             botui.message.add({
-                delay: 1500,
-                content: "目前就读于武汉理工大学"
+                delay: 1200,
+                content: "关于我呀"
             }).then(function () {
                 botui.message.add({
                     delay: 1500,
@@ -62,7 +54,7 @@ function bot_ui_ini() {
                         content: "主攻 Python，略懂 Java，精通 C/C++/C#/JavaScript/PHP"
                     }).then(function () {
                         botui.message.add({
-                            delay: 1500,
+                            delay: 1200,
                             content: "的 \"Hello World\" 输出方式 "
                         }).then(function () {
                                     botui.action.button({
@@ -82,17 +74,22 @@ function bot_ui_ini() {
         thirdpart = function () {
             botui.message.add({
                 delay: 1E3,
-                content: "因为！椎名真白天下第一！我永远喜欢Shiina Mashiro.jpg"
+                content: "因为！椎名真白天下第一！"
             }).then(function () {
-                botui.action.button({
-                    delay: 1500,
-                    action: [{
-                        text: "为什么建立这个博客呢？(*≧∪≦)",
-                        value: "why-cat"
-                    }]
+                    botui.message.add({
+                        delay: 1200,
+                        content: "我永远喜欢 Shiina Mashiro ! "
+                    }).then(function () {
+                          botui.action.button({
+                              delay: 1500,
+                              action: [{
+                                   text: "为什么建立这个博客呢？(*≧∪≦)",
+                                   value: "why-cat"
+                              }]
                 }).then(function (a) {
                     fourthpart()
                 })
+            })
             })
         },
         fourthpart = function () {
@@ -117,15 +114,15 @@ function bot_ui_ini() {
         },
             end = function () {
                 botui.message.add({
-                    delay: 1100,
+                    delay: 1000,
                     content: "!?(･_･;? 我永远喜欢椎名真白！"
                 }).then(function () {
                     botui.message.add({
-                        delay: 600,
-                        content: "接下来 看看我的博客吧ヽ(･ω･´ﾒ)"
+                        delay: 1200,
+                        content: "椎名真白永远爱我🌸"
                     }).then(function () {
                         botui.message.add({
-                            delay: 600,
+                            delay: 1400,
                             content: "![...](https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v1.7/lpzn.jpg)"
                         })
                     })
