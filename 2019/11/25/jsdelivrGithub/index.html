@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Tag: web | Mashiro</title>
+  <title itemprop="name">使用jsDelivr在GitHub上打造CDN库 | Mashiro</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -257,14 +257,7 @@
                       <li>
                         <a href="/music/">
                           <i class="fa fa-headphones" aria-hidden="true"></i>
-                          歌单
-                        </a>
-                      </li>
-                    
-                      <li>
-                        <a href="/tags/图集/">
-                          <i class="fa fa-photo" aria-hidden="true"></i>
-                          图集
+                          音乐
                         </a>
                       </li>
                     
@@ -319,64 +312,126 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="web.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v1.8/img/banner/tqzz.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v1.8/img/banner/tqzz.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      使用jsDelivr在GitHub上打造CDN库</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://mashiro.fun/">
+            <img src="https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v1.6/img/custom/Avatar.png">
+          </a>
+        </span>
+        <span>
+          <a href="https://mashiro.fun/">Mashiro</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2019-11-25<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">web</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2018/12/12/Hexo-Theme-Sakura/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h2 id="jsDelivr"><a href="#jsDelivr" class="headerlink" title="jsDelivr"></a>jsDelivr</h2><blockquote>
+<p>Jsdelivr 网站是一个致力于为开发者提供数千种Javascript、CSS等超过1650多种 Libraries加速的免费CDN服务，该平台是首个「打通中国大陆与海外的免费CDN服务」，网页开发者无须担心中国防火墙问题而影响使用。<br>jsDelivr平台将服务重心放在更快速的网路连线，利用CDN技术来确保每个地区的使用者都能获得最好的连接速度。此外jsDelivr可将不同的JavaScript或CSSlibraries整合在一起，通过一段链结来载入网站，非常方便!<br>如果你正在寻找类似服务，jsDelivr 是个不错的选择。</p>
+</blockquote>
+<h2 id="配置过程"><a href="#配置过程" class="headerlink" title="配置过程"></a>配置过程</h2><h3 id="1、新建GitHub库"><a href="#1、新建GitHub库" class="headerlink" title="1、新建GitHub库"></a>1、新建GitHub库</h3><h3 id="2、安装git"><a href="#2、安装git" class="headerlink" title="2、安装git"></a>2、安装git</h3><h4 id="git官方下载：这里这里"><a href="#git官方下载：这里这里" class="headerlink" title="git官方下载：这里这里"></a>git官方下载：<a href="https://git-scm.com/" target="_blank" rel="noopener">这里这里</a></h4><h4 id="macOS建议使用homebrew安装："><a href="#macOS建议使用homebrew安装：" class="headerlink" title="macOS建议使用homebrew安装："></a>macOS建议使用homebrew安装：</h4><h5 id="1-安装homebrew"><a href="#1-安装homebrew" class="headerlink" title="1.安装homebrew"></a>1.安装homebrew</h5><pre><code class="git">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre>
+<h5 id="2-安装git"><a href="#2-安装git" class="headerlink" title="2.安装git"></a>2.安装git</h5><pre><code class="git">brew install git
+</code></pre>
+<h3 id="3、使用git上传本地文件到GitHub"><a href="#3、使用git上传本地文件到GitHub" class="headerlink" title="3、使用git上传本地文件到GitHub"></a>3、使用git上传本地文件到GitHub</h3><p>1.本地新建一个文件夹<br>2.使用终端定义到该目录(windows系统鼠标右键git bash here)<br>3.终端输入</p>
+<pre><code class="git">git init
+</code></pre>
+<p>4.复制GitHub仓库git地址<br>例如<code>https://github.com/MashiroRb/CDNjsDelivr.git</code><br>5.输入</p>
+<pre><code class="git">git remote add origin 刚才复制的地址
+</code></pre>
+<p>6.输入</p>
+<pre><code class="git">git pull origin master
+</code></pre>
+<p>7.将要上传的文件放入该文件夹<br>8.输入</p>
+<pre><code class="git">git add .
+</code></pre>
+<p>9.添加内容描述</p>
+<pre><code class="git">git commit -m &#39;添加内容描述&#39;
+</code></pre>
+<p>10.将本地文件上传到GitHub</p>
+<pre><code class="git">git push origin master
+</code></pre>
+<h3 id="4、建立releases联系"><a href="#4、建立releases联系" class="headerlink" title="4、建立releases联系"></a>4、建立releases联系</h3><p>进入GitHub仓库，找到<code>release</code>,然后点击<code>Draft a new release</code>,建立release之后记住版本号。<br>找到该仓库里要使用的资源，例如<code>https://github.com/MashiroRb/CDNjsDelivr/blob/master/img/logo/Google.svg</code><br>假如你的版本号是v1.8，此时使用jsDelivr调用的结果就是<code>https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v1.8/img/logo/Google.svg</code></p>
+<h4 id="使用jsDelivr访问的具体路径为："><a href="#使用jsDelivr访问的具体路径为：" class="headerlink" title="使用jsDelivr访问的具体路径为："></a>使用jsDelivr访问的具体路径为：</h4><pre><code class="git">https://cdn.jsdelivr.net/gh/GitHub用户名/GitHub仓库@releases版本号/文件在该仓库中的路径
+</code></pre>
+
         </div>
-        <img width="150" height="150" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2018/12/12/Hexo-Theme-Sakura/">
-    Hexo-Theme-Sakura</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2018-12-12</div>
-    <p>
-    hexo-sakura主题使用教程</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2018/12/12/Hexo-Theme-Sakura/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v1.6/img/custom/donate/AliPayQR.png"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v1.6/img/custom/donate/WechanQR.png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "oQaTHxPDbuLGPYTWCef4ci6y-gzGzoHsz",
+        appKey: "FhBzUx0axroBJj1WBn62hyHS",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="https://mashiro.fun/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v1.6/img/custom/Avatar.png" itemprop="image" alt="Mashiro" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://mashiro.fun/" itemprop="url" rel="author">Mashiro</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>呐 你想变成什么颜色？</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
@@ -603,14 +658,7 @@ $(document).ready(function() {
               <li>
                 <a href="/music/">
                   <i class="fa fa-headphones" aria-hidden="true"></i>
-                  歌单
-                </a>
-              </li>
-            
-              <li>
-                <a href="/tags/图集/">
-                  <i class="fa fa-photo" aria-hidden="true"></i>
-                  图集
+                  音乐
                 </a>
               </li>
             

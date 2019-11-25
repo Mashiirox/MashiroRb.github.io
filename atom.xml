@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-11-16T09:29:49.000Z</updated>
+  <updated>2019-11-25T07:27:26.994Z</updated>
   <id>/</id>
   
   <author>
@@ -17,24 +17,22 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-11-16T09:29:49.000Z</updated>
+    <title>使用jsDelivr在GitHub上打造CDN库</title>
+    <link href="/2019/11/25/jsdelivrGithub/"/>
+    <id>/2019/11/25/jsdelivrGithub/</id>
+    <published>2019-11-25T03:37:41.000Z</published>
+    <updated>2019-11-25T07:27:26.994Z</updated>
     
     <summary type="html">
     
-      hexo-sakura主题使用教程
+      jsDelivr+GitHub
     
     </summary>
     
       <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+      <category term="CDN" scheme="/tags/CDN/"/>
     
   </entry>
   
