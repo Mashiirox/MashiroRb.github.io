@@ -247,7 +247,7 @@ if(!norunFlag){
 			}
 		});
 		//获取换装
-		var LoadingModelJson = ["model/Sakurasou/mashiro/seifuku.model.json","model/Sakurasou/mashiro/shifuku.model.json","model/Sakurasou/mashiro/ryoufuku.model.json"]
+		var LoadingModelJson = ["model/mashiro/seifuku.model.json","model/mashiro/shifuku.model.json","model/mashiro/ryoufuku.model.json"]
 		var fukuType = 0;
 		var live2dfuku = localStorage.getItem("live2dfuku");
 		if(live2dfuku !== null){
@@ -467,23 +467,23 @@ if(!norunFlag){
 		}
 		var LoadingimgList = [
 			[
-				home_Path + message_Path + "model/Sakurasou/mashiro/seifuku.1024/L2DMSR_U_00.png",
-				home_Path + message_Path + "model/Sakurasou/mashiro/seifuku.1024/L2DMSR_U_01.png",
-				home_Path + message_Path + "model/Sakurasou/mashiro/seifuku.1024/L2DMSR_U_02.png"
+				home_Path + message_Path + "model/mashiro/seifuku.1024/L2DMSR_U_00.png",
+				home_Path + message_Path + "model/mashiro/seifuku.1024/L2DMSR_U_01.png",
+				home_Path + message_Path + "model/mashiro/seifuku.1024/L2DMSR_U_02.png"
 			],
 			[
-				home_Path + message_Path + "model/Sakurasou/mashiro/shifuku.1024/L2DMSR_S_00.png",
-				home_Path + message_Path + "model/Sakurasou/mashiro/shifuku.1024/L2DMSR_S_01.png",
-				home_Path + message_Path + "model/Sakurasou/mashiro/shifuku.1024/L2DMSR_S_02.png",
-				home_Path + message_Path + "model/Sakurasou/mashiro/shifuku.1024/L2DMSR_S_03.png"
+				home_Path + message_Path + "model/mashiro/shifuku.1024/L2DMSR_S_00.png",
+				home_Path + message_Path + "model/mashiro/shifuku.1024/L2DMSR_S_01.png",
+				home_Path + message_Path + "model/mashiro/shifuku.1024/L2DMSR_S_02.png",
+				home_Path + message_Path + "model/mashiro/shifuku.1024/L2DMSR_S_03.png"
 			],
 			[
-				home_Path + message_Path + "model/Sakurasou/mashiro/ryoufuku.1024/L2DMSR_R_00.png",
-				home_Path + message_Path + "model/Sakurasou/mashiro/ryoufuku.1024/L2DMSR_R_01.png",
-				home_Path + message_Path + "model/Sakurasou/mashiro/ryoufuku.1024/L2DMSR_R_02.png"
+				home_Path + message_Path + "model/mashiro/ryoufuku.1024/L2DMSR_R_00.png",
+				home_Path + message_Path + "model/mashiro/ryoufuku.1024/L2DMSR_R_01.png",
+				home_Path + message_Path + "model/mashiro/ryoufuku.1024/L2DMSR_R_02.png"
 			],
 		]
-		var LoadingModelJson = ["model/Sakurasou/mashiro/seifuku.model.json","model/Sakurasou/mashiro/shifuku.model.json","model/Sakurasou/mashiro/ryoufuku.model.json"]
+		var LoadingModelJson = ["model/mashiro/seifuku.model.json","model/mashiro/shifuku.model.json","model/mashiro/ryoufuku.model.json"]
 		var AIimgSrc = LoadingimgList[fukuType];
 		var images = [];
 		var imgLength = AIimgSrc.length;
