@@ -25,31 +25,31 @@ function bot_ui_ini() {
         content: "Hi"
     }).then(function () {
         botui.message.add({
-            delay: 1100,
+            delay: 1200,
             content: "来自远方的陌生人"
         }).then(function () {
             botui.message.add({
-                delay: 1100,
+                delay: 1200,
                 content: "如果你看到了这里"
             }).then(function () {
                 botui.message.add({
-                    delay: 1100,
+                    delay: 1200,
                     content: "那可真是机缘巧合"
                 }).then(function () {
                     botui.message.add({
-                        delay: 1100,
+                        delay: 1400,
                         content: "不过"
                     }).then(function () {
                         botui.message.add({
-                            delay: 1100,
-                            content: "我是个无聊的人"
+                            delay: 1200,
+                            content: "我是个无趣的人"
                         }).then(function () {
                             botui.message.add({
-                                delay: 1100,
+                                delay: 1000,
                                 content: "无需了解"
                             }).then(function () {
                                 botui.message.add({
-                                    delay: 1100,
+                                    delay: 1200,
                                     content: "浏览完博客内容就离开这里吧"
                                 }).then(function () {
                                     botui.action.button({
@@ -58,7 +58,7 @@ function bot_ui_ini() {
                                             text: "再见",
                                             value: "skip"
                                         },{
-                                            text:"下次见",
+                                            text:"再留一会儿",
                                             value: "sure"
                                         }]
                                     }).then(function (a) {
@@ -75,7 +75,7 @@ function bot_ui_ini() {
         });
     var sure = function () {
             botui.message.add({
-                delay: 600,
+                delay: 1000,
                 content: "真是个奇怪的人"
             }).then(function () {
                 secondpart()
@@ -83,7 +83,7 @@ function bot_ui_ini() {
         },
         end = function () {
             botui.message.add({
-                delay: 600,
+                delay: 800,
                 content: "再见"
             })
         },
@@ -101,27 +101,27 @@ function bot_ui_ini() {
                         content: "一次偶然的机会 看到了樱花庄的白猫的博客"
                     }).then(function () {
                         botui.message.add({
-                            delay: 2000,
+                            delay: 800,
                             content: "也就是本站主题的作者"
                         }).then(function () {
                             botui.message.add({
-                                delay: 2000,
+                                delay: 1200,
                                 content: "突然萌发出想复刻个博客的想法"
                             }).then(function () {
                                 botui.message.add({
-                                    delay: 2000,
-                                    content: "顺便记录下一些随笔"
+                                    delay: 1200,
+                                    content: "顺便记录下一些想法"
                                 }).then(function () {
                                     botui.message.add({
-                                        delay: 2000,
+                                        delay: 1200,
                                         content: "如果你还有兴趣听下去的话"
                                     }).then(function () {
                                         botui.message.add({
-                                            delay: 2000,
+                                            delay: 1000,
                                             content: "那就再讲一点"
                                         }).then(function () {
                                         botui.action.button({
-                                            delay: 1100,
+                                            delay: 1300,
                                             action: [{
                                                 text: "下次吧",
                                                 value: "skip2"
@@ -144,21 +144,21 @@ function bot_ui_ini() {
             };
     var sure2 = function () {
             botui.message.add({
-                delay: 600,
-                content: "你是很闲吗？"
+                delay: 900,
+                content: "你还挺闲的"
             }).then(function () {
                 thirdpart()
             })
         },
         end2 = function () {
             botui.message.add({
-                delay: 600,
+                delay: 800,
                 content: "再见了"
             })
         },
         thirdpart = function () {
             botui.message.add({
-                delay: 1E3,
+                delay: 1200,
                 content: "那再谈一点关于我的事吧"
             }).then(function () {
                     botui.message.add({
@@ -166,7 +166,7 @@ function bot_ui_ini() {
                         content: "关于我"
                     }).then(function () {
                         botui.message.add({
-                            delay: 1200,
+                            delay: 1400,
                             content: "武汉理工第一退堂鼓鼓手"
                         }).then(function () {
                             botui.message.add({
@@ -178,11 +178,11 @@ function bot_ui_ini() {
                                     content: "对音乐 旅行 动漫有兴趣"
                                 }).then(function () {
                                     botui.message.add({
-                                        delay: 1200,
+                                        delay: 1000,
                                         content: "喜欢百事可乐"
                                     }).then(function () {
                                         botui.message.add({
-                                            delay: 1200,
+                                            delay: 1000,
                                             content: "喜欢月亮🌙"
                                         }).then(function () {
                                             botui.message.add({
@@ -194,7 +194,7 @@ function bot_ui_ini() {
                                                     content: "关于我 就只谈这么多了"
                                                 }).then(function () {
                                                     botui.message.add({
-                                                        delay: 1200,
+                                                        delay: 1000,
                                                         content: "作为陌生人 已经了解的够多了"
                                                     }).then(function () {
                                                         botui.action.button({
@@ -223,7 +223,7 @@ function bot_ui_ini() {
         };
     var sure3 = function () {
             botui.message.add({
-                delay: 600,
+                delay: 1000,
                 content: "看到这里 你确实是很闲了"
             }).then(function () {
                 fourthpart()
@@ -231,33 +231,33 @@ function bot_ui_ini() {
         },
         end3 = function () {
             botui.message.add({
-                delay: 600,
+                delay: 800,
                 content: "晚安"
             })
         },
         fourthpart = function () {
             botui.message.add({
-                delay: 1E3,
+                delay: 1200,
                 content: "我应该说的差不多了"
             }).then(function () {
                 botui.message.add({
-                    delay: 1100,
+                    delay: 1200,
                     content: "那说一下最后一个信息吧"
                 }).then(function () {
                     botui.message.add({
-                        delay: 1100,
+                        delay: 1200,
                         content: "关于本站域名 Mashiro"
                     }).then(function () {
                         botui.message.add({
-                            delay: 1100,
+                            delay: 1000,
                             content: "是我女朋友的名字"
                         }).then(function () {
                             botui.message.add({
-                                delay: 1100,
+                                delay: 1300,
                                 content: "那么 接下来仔细看看我的博客吧"
                             }).then(function () {
                                 botui.message.add({
-                                    delay: 1100,
+                                    delay: 1300,
                                     content: "再见了"
                                 }).then(function () {
                                     botui.action.button({
@@ -282,7 +282,7 @@ function bot_ui_ini() {
         };
         var sure4 = function () {
          botui.message.add({
-             delay: 600,
+             delay: 900,
              content: "不谈了"
             }).then(function () {
               endpart()
@@ -290,25 +290,25 @@ function bot_ui_ini() {
           },
           end4 = function () {
              botui.message.add({
-             delay: 600,
+             delay: 800,
              content: "👋"
          })
           },
             endpart = function () {
                 botui.message.add({
-                    delay: 1000,
-                    content: "结束要恰到好处"
+                    delay: 1200,
+                    content: "要适可而止"
                 }).then(function () {
                     botui.message.add({
                         delay: 1200,
                         content: "有兴趣的话 不如去留言板留条言吧"
                     }).then(function () {
                         botui.message.add({
-                            delay: 1400,
+                            delay: 1200,
                             content: "每个人都有属于自己的一片森林，也许我们从来不曾走过，但它一直在那里，总会在那里。"
                         }).then(function () {
                             botui.message.add({
-                                delay: 1200,
+                                delay: 1400,
                                 content: "迷失的人迷失了，相逢的人会再相逢。"
                             })
                         })
