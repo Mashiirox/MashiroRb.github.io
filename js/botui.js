@@ -22,111 +22,298 @@ function bot_ui_ini() {
     var botui = new BotUI("hello-mashiro")
     botui.message.add({
         delay: 800,
-        content: "Hello hello(oﾟ▽ﾟ)o"
+        content: "Hi"
     }).then(function () {
         botui.message.add({
             delay: 1100,
-            content: "你找到我啦"
+            content: "来自远方的陌生人"
         }).then(function () {
-                botui.action.button({
-                    delay: 1600,
-                    action: [{
-                        text: "嗯！🤣",
-                        value: "sure"
-                    }]
-                }).then(function (a) {
-                    secondpart()
-                })
-            })
-        }),
-        
-        secondpart = function () {
             botui.message.add({
-                delay: 1200,
-                content: "关于我呀"
+                delay: 1100,
+                content: "如果你看到了这里"
             }).then(function () {
                 botui.message.add({
-                    delay: 1500,
-                    content: "自由随性洒脱的伪Coder"
+                    delay: 1100,
+                    content: "那可真是机缘巧合"
                 }).then(function () {
                     botui.message.add({
-                        delay: 1200,
-                        content: "主攻 Python，略懂 Java，精通 C/C++/C#/JavaScript/PHP"
+                        delay: 1100,
+                        content: "不过"
                     }).then(function () {
                         botui.message.add({
-                            delay: 2000,
-                            content: "的 \"Hello World\" 输出方式 "
+                            delay: 1100,
+                            content: "我是个无聊的人"
                         }).then(function () {
+                            botui.message.add({
+                                delay: 1100,
+                                content: "无需了解"
+                            }).then(function () {
+                                botui.message.add({
+                                    delay: 1100,
+                                    content: "浏览完博客内容就离开这里吧"
+                                }).then(function () {
                                     botui.action.button({
-                                        delay: 1100,
+                                        delay: 1600,
                                         action: [{
-                                            text: "为什么站名是Mashiro呢？(ﾟ▽ﾟ)/",
-                                            value: "why-mashiro"
+                                            text: "再见",
+                                            value: "skip"
+                                        },{
+                                            text:"下次见",
+                                            value: "sure"
                                         }]
                                     }).then(function (a) {
-                                        thirdpart()
+                                        "sure" == a.value && sure();
+                                        "skip" == a.value && end()
                                     })
                                 })
+                            })
                         })
                     })
                 })
-            },
+            })
+        })
+        });
+    var sure = function () {
+            botui.message.add({
+                delay: 600,
+                content: "真是个奇怪的人"
+            }).then(function () {
+                secondpart()
+            })
+        },
+        end = function () {
+            botui.message.add({
+                delay: 600,
+                content: "再见"
+            })
+        },
+        secondpart = function () {
+            botui.message.add({
+                delay: 1200,
+                content: "那就说点琐事吧"
+            }).then(function () {
+                botui.message.add({
+                    delay: 1500,
+                    content: "关于这个博客"
+                }).then(function () {
+                    botui.message.add({
+                        delay: 1200,
+                        content: "一次偶然的机会 看到了樱花庄的白猫的博客"
+                    }).then(function () {
+                        botui.message.add({
+                            delay: 2000,
+                            content: "也就是本站主题的作者"
+                        }).then(function () {
+                            botui.message.add({
+                                delay: 2000,
+                                content: "突然萌发出想复刻个博客的想法"
+                            }).then(function () {
+                                botui.message.add({
+                                    delay: 2000,
+                                    content: "顺便记录下一些随笔"
+                                }).then(function () {
+                                    botui.message.add({
+                                        delay: 2000,
+                                        content: "如果你还有兴趣听下去的话"
+                                    }).then(function () {
+                                        botui.message.add({
+                                            delay: 2000,
+                                            content: "那就再讲一点"
+                                        }).then(function () {
+                                        botui.action.button({
+                                            delay: 1100,
+                                            action: [{
+                                                text: "下次吧",
+                                                value: "skip2"
+                                            },{
+                                                text: "讲吧",
+                                                value: "sure2"
+                                            }]
+                                        }).then(function (a) {
+                                            "sure2" == a.value && sure2();
+                                            "skip2" == a.value && end2()
+                                        })
+                                    })
+                                })
+                                })
+                            })
+                        })
+                    })
+                })
+                })
+            };
+    var sure2 = function () {
+            botui.message.add({
+                delay: 600,
+                content: "你是很闲吗？"
+            }).then(function () {
+                thirdpart()
+            })
+        },
+        end2 = function () {
+            botui.message.add({
+                delay: 600,
+                content: "再见了"
+            })
+        },
         thirdpart = function () {
             botui.message.add({
                 delay: 1E3,
-                content: "因为！椎名真白天下第一！"
+                content: "那再谈一点关于我的事吧"
             }).then(function () {
                     botui.message.add({
                         delay: 1200,
-                        content: "我永远喜欢 Shiina Mashiro ! "
+                        content: "关于我"
                     }).then(function () {
-                          botui.action.button({
-                              delay: 1500,
-                              action: [{
-                                   text: "为什么建立这个博客呢？(*≧∪≦)",
-                                   value: "why-cat"
-                              }]
-                }).then(function (a) {
-                    fourthpart()
-                })
+                        botui.message.add({
+                            delay: 1200,
+                            content: "武汉理工第一退堂鼓鼓手"
+                        }).then(function () {
+                            botui.message.add({
+                                delay: 1200,
+                                content: "没有喜欢到骨子里的爱好"
+                            }).then(function () {
+                                botui.message.add({
+                                    delay: 1200,
+                                    content: "对音乐 旅行 动漫有兴趣"
+                                }).then(function () {
+                                    botui.message.add({
+                                        delay: 1200,
+                                        content: "喜欢百事可乐"
+                                    }).then(function () {
+                                        botui.message.add({
+                                            delay: 1200,
+                                            content: "喜欢月亮🌙"
+                                        }).then(function () {
+                                            botui.message.add({
+                                                delay: 1200,
+                                                content: "工作的话 前端开发工程师(待定"
+                                            }).then(function () {
+                                                botui.message.add({
+                                                    delay: 1200,
+                                                    content: "关于我 就只谈这么多了"
+                                                }).then(function () {
+                                                    botui.message.add({
+                                                        delay: 1200,
+                                                        content: "作为陌生人 已经了解的够多了"
+                                                    }).then(function () {
+                                                        botui.action.button({
+                                                            delay: 1500,
+                                                            action: [{
+                                                                text: "再见",
+                                                                value: "skip3"
+                                                            },{
+                                                                text: "再谈点其他的吧",
+                                                                value: "sure3"
+                                                            }]
+                                                        }).then(function (a) {
+                                                            "sure3" == a.value && sure3();
+                                                            "skip3" == a.value && end3()
+                                                        })
+                                                    })
+                                                })
+                                            })
+                                        })
+                                    })
+                                })
+                            })
+                        })
+                    })
             })
+        };
+    var sure3 = function () {
+            botui.message.add({
+                delay: 600,
+                content: "看到这里 你确实是很闲了"
+            }).then(function () {
+                fourthpart()
+            })
+        },
+        end3 = function () {
+            botui.message.add({
+                delay: 600,
+                content: "晚安"
             })
         },
         fourthpart = function () {
             botui.message.add({
                 delay: 1E3,
-                content: "因为一次偶然机会看到 樱花庄的白猫(本站主题作者)的博客 "
+                content: "我应该说的差不多了"
             }).then(function () {
                 botui.message.add({
                     delay: 1100,
-                    content: "就想建个博客记录自己写bug的一系列过程(*ﾟДﾟ*) "
-                }).then(function () {
-                        botui.action.button({
-                            delay: 1500,
-                            action: [{
-                                text: "你有女朋友吗？(･ェ･。)",
-                                value: "why-domain"
-                            }]
-                         }).then(function (a) {
-                        end()
-                    })
-            })
-        },
-            end = function () {
-                botui.message.add({
-                    delay: 1000,
-                    content: "!?(･_･;? 我永远喜欢椎名真白！"
+                    content: "那说一下最后一个信息吧"
                 }).then(function () {
                     botui.message.add({
-                        delay: 1200,
-                        content: "椎名真白永远爱我🌸"
+                        delay: 1100,
+                        content: "关于本站域名 Mashiro"
                     }).then(function () {
                         botui.message.add({
-                            delay: 1400,
-                            content: "![...](https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v1.7/lpzn.jpg)"
+                            delay: 1100,
+                            content: "是我女朋友的名字"
+                        }).then(function () {
+                            botui.message.add({
+                                delay: 1100,
+                                content: "那么 接下来仔细看看我的博客吧"
+                            }).then(function () {
+                                botui.message.add({
+                                    delay: 1100,
+                                    content: "再见了"
+                                }).then(function () {
+                                    botui.action.button({
+                                        delay: 1500,
+                                        action: [{
+                                            text: "再见",
+                                            value: "skip4"
+                                        }, {
+                                            text: "再谈一点吧",
+                                            value: "sure4"
+                                        }]
+                                    }).then(function (a) {
+                                        "sure4" == a.value && sure4();
+                                        "skip4" == a.value && end4()
+                                    })
+                                })
+                            })
                         })
                     })
                 })
             })
-        }
+        };
+        var sure4 = function () {
+         botui.message.add({
+             delay: 600,
+             content: "不谈了"
+            }).then(function () {
+              endpart()
+          })
+          },
+          end4 = function () {
+             botui.message.add({
+             delay: 600,
+             content: "👋"
+         })
+          },
+            endpart = function () {
+                botui.message.add({
+                    delay: 1000,
+                    content: "结束要恰到好处"
+                }).then(function () {
+                    botui.message.add({
+                        delay: 1200,
+                        content: "有兴趣的话 不如去留言板留条言吧"
+                    }).then(function () {
+                        botui.message.add({
+                            delay: 1400,
+                            content: "每个人都有属于自己的一片森林，也许我们从来不曾走过，但它一直在那里，总会在那里。"
+                        }).then(function () {
+                            botui.message.add({
+                                delay: 1200,
+                                content: "迷失的人迷失了，相逢的人会再相逢。"
+                            })
+                        })
+                    })
+                })
+            }
+
 }
