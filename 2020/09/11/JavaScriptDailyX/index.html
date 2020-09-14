@@ -333,7 +333,14 @@ Math.round(20.5);      //21
 Math.round(-20.5);      //-20
 
 Math.round(-20.51);      //-21
-</code></pre>
+</code></pre><h3 id="3、鼠标点击事件"><a href="#3、鼠标点击事件" class="headerlink" title="3、鼠标点击事件"></a>3、鼠标点击事件</h3><ol>
+<li><code>btn.onfocus</code> 及 <code>btn.onblur</code>   :   颜色将于按钮被置于焦点或解除焦点时改变。<br></li>
+<li><code>btn.ondblclick</code>    :    颜色将仅于按钮被双击时改变。<br></li>
+<li><code>window.onkeypress</code>，<code>window.onkeydown</code>，<code>window.onkeyup</code>    :    当按钮被按下时颜色会发生改变。<br> <code>keypress</code> 指的是通俗意义上的按下按钮 (按下并松开)，而 <code>keydown</code> 和 <code>keyup</code> 指的是按键动作的一部分，分别指按下和松开。<br><code>注意!</code> 如果你将事件处理器添加到按钮本身，它将不会工作 — 我们只能将它添加到代表整个浏览器窗口的 window对象中。<br></li>
+<li><code>btn.onmouseover</code> 和 <code>btn.onmouseout</code> : 颜色将会在鼠标移入按钮上方时发生改变， 或者当它从按钮移出时。<br></li>
+<li>一些事件非常通用，几乎在任何地方都可以用（比如 onclick 几乎可以用在几乎每一个元素上），然而另一些元素就只能在特定场景下使用，<code>比如我们只能在 video 元素上使用 onplay</code>。</li>
+</ol>
+
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
