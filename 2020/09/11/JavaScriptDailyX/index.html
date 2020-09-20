@@ -340,6 +340,10 @@ Math.round(-20.51);      //-21
 <li><code>btn.onmouseover</code> 和 <code>btn.onmouseout</code> : 颜色将会在鼠标移入按钮上方时发生改变， 或者当它从按钮移出时。<br></li>
 <li>一些事件非常通用，几乎在任何地方都可以用（比如 onclick 几乎可以用在几乎每一个元素上），然而另一些元素就只能在特定场景下使用，<code>比如我们只能在 video 元素上使用 onplay</code>。</li>
 </ol>
+<h3 id="4、Promise术语回顾"><a href="#4、Promise术语回顾" class="headerlink" title="4、Promise术语回顾"></a>4、Promise术语回顾</h3><h4 id="创建promise时，它既不是成功也不是失败状态。这个状态叫作pending（待定）。"><a href="#创建promise时，它既不是成功也不是失败状态。这个状态叫作pending（待定）。" class="headerlink" title="创建promise时，它既不是成功也不是失败状态。这个状态叫作pending（待定）。"></a>创建promise时，它既不是成功也不是失败状态。这个状态叫作<code>pending</code>（待定）。</h4><h4 id="当promise返回时，称为-resolved（已解决）。"><a href="#当promise返回时，称为-resolved（已解决）。" class="headerlink" title="当promise返回时，称为 resolved（已解决）。"></a>当promise返回时，称为 <code>resolved</code>（已解决）。</h4><ol>
+<li>一个成功<code>resolved</code>的promise称为<code>fullfilled</code>（实现）。它返回一个值，可以通过将<code>.then()</code>块链接到promise链的末尾来访问该值。 <code>.then()</code>块中的执行程序函数将包含promise的返回值。</li>
+<li>一个不成功<code>resolved</code>的promise被称为<code>rejected</code>（拒绝）了。它返回一个原因（<code>reason</code>），一条错误消息，说明为什么拒绝promise。可以通过将.catch()块链接到promise链的末尾来访问此原因。</li>
+</ol>
 
         </div>
         <!-- .entry-content -->
