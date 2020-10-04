@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Category: 随记 | ねこ・しろ・ましろ</title>
+  <title itemprop="name">JavaScript基础题库整理 | ねこ・しろ・ましろ</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -271,171 +271,165 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img data-src="https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v1.8/img/banner/p3.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v2.0/imgAnother/a1.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v2.0/imgAnother/a1.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      JavaScript基础题库整理</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://mashiro.fun/">
+            <img src="https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v1.6/img/custom/Avatar.png">
+          </a>
+        </span>
+        <span>
+          <a href="https://mashiro.fun/">Mashiro</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-10-4<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">有感而记</h1>
-    <span class="cat-des">
-      <p>notes</p>
-    </span>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h2 id="JavaScript执行机制"><a href="#JavaScript执行机制" class="headerlink" title="JavaScript执行机制"></a>JavaScript执行机制</h2><h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><pre><code>console.log(1);
+setTimeout(() =&gt; {console.log(2)}, 0);
+console.log(3);
+Promise.resolve(4).then(b =&gt; {
+console.log(b);
+});
+console.log(5);
+
+//输出结果为: 1 3 5 4 2
+</code></pre><p>console.log() -&gt; 同步<br><br>promise -&gt; 异步，微任务<br><br>setTimeout -&gt;  异步，宏任务<br><br><code>执行顺序: 同步 &gt; 异步,微任务 &gt; 异步，宏任务</code></p>
+<h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h3><pre><code>console.log(&#39;1&#39;);
+
+setTimeout(function() {
+    console.log(&#39;2&#39;);
+    process.nextTick(function() {
+        console.log(&#39;3&#39;);
+    })
+    new Promise(function(resolve) {
+        console.log(&#39;4&#39;);
+        resolve();
+    }).then(function() {
+        console.log(&#39;5&#39;)
+    })
+})
+process.nextTick(function() {
+    console.log(&#39;6&#39;);
+})
+new Promise(function(resolve) {
+    console.log(&#39;7&#39;);
+    resolve();
+}).then(function() {
+    console.log(&#39;8&#39;)
+})
+
+setTimeout(function() {
+    console.log(&#39;9&#39;);
+    process.nextTick(function() {
+        console.log(&#39;10&#39;);
+    })
+    new Promise(function(resolve) {
+        console.log(&#39;11&#39;);
+        resolve();
+    }).then(function() {
+        console.log(&#39;12&#39;)
+    })
+})
+
+
+//输出结果为: 1,7,6,8,2,4,3,5,9,11,10,12
+</code></pre><p>1.首先 先执行<code>console.log(1)</code>，然后将<code>setTimeout</code>放到<code>宏任务</code>event queue里面，记作 setTimeout 1 。接着 看到 <code>process.nextTick</code> ，将其放到<code>微任务</code>里面 ，记作 process 1，然后 看到<code>new promise</code> 立即执行输出9 ，将里面的<code>then</code> 放到 <code>微任务</code>里面 记作 then 2，继续，遇到 setTimeout 放到<code>宏任务</code>里面记作 setTimeout 2 。<br>目前输出的是：<code>1,7</code><br>2.接下来，开始判断是否有<code>微任务</code>，刚刚放入到微任务event queue的进入到主程序开始执行，process 1 ， then 2 。目前输出的是：<code>6,8</code><br>3.接下来，微任务的event queue 空了，进行下一轮事件，将刚刚放到<code>宏任务</code>的 setTimeout 1 进入到主线程，遇到 console 立即执行， 遇到 <code>process.nextTick</code> 放到<code>微任务</code> event queue 里面 记作 process1， 接着遇到 <code>new Promise</code> 立即执行， 将 then 放到event queue 里面 记作 then 2，OK，当前宏任务里的任务执行完了，判断是否有微任务，发现有 <code>process1</code>， <code>then 2</code> 两个微任务 ，一次执行。目前输出的是：<code>2,4,3,5</code><br>4.目前主线程里的任务都执行结束了，又开始第三轮事件循环，同上，目前输出的是：<code>9,11,10,12</code></p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v2.0/img/custom/donate/AliPayQR.png"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v2.0/img/custom/donate/WechanQR.png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2020/09/11/JavaScriptDailyX/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v2.0/imgAnother/a10.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v2.0/imgAnother/a10.png">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                JavaScript基本语法记录</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/10/04/WebKnowledgePointsX/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v2.0/imgAnother/a1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/10/04/WebKnowledgePointsX/">
-    JavaScript基础题库整理</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-10-4</div>
-    <p>
-    前端基础题型整理</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/10/04/WebKnowledgePointsX/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/09/11/JavaScriptDailyX/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v2.0/imgAnother/a10.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/09/11/JavaScriptDailyX/">
-    JavaScript基本语法记录</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-9-11</div>
-    <p>
-    前端开发基础知识总集</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/09/11/JavaScriptDailyX/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "oQaTHxPDbuLGPYTWCef4ci6y-gzGzoHsz",
+        appKey: "FhBzUx0axroBJj1WBn62hyHS",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="https://mashiro.fun/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v1.6/img/custom/Avatar.png" itemprop="image" alt="Mashiro" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://mashiro.fun/" itemprop="url" rel="author">Mashiro</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>呐 你想变成什么颜色？</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
 
-<!-- 
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/10/04/WebKnowledgePointsX/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v2.0/imgAnother/a1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/10/04/WebKnowledgePointsX/">
-    JavaScript基础题库整理</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-10-4</div>
-    <p>
-    前端基础题型整理</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/10/04/WebKnowledgePointsX/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/09/11/JavaScriptDailyX/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/MashiroRb/CDNjsDelivr@v2.0/imgAnother/a10.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/09/11/JavaScriptDailyX/">
-    JavaScript基本语法记录</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-9-11</div>
-    <p>
-    前端开发基础知识总集</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/09/11/JavaScriptDailyX/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
 
- -->
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
