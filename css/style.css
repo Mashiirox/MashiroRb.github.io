@@ -1387,7 +1387,7 @@ a:hover,a:active {
 }
 .site-title img {
     height:40px;
-    margin-top:17px;
+    margin-top:7px;
     opacity:.75;
     -webkit-transition:color .2s ease-out,border .2s ease-out,opacity .2s ease-out;
     -moz-transition:color .2s ease-out,border .2s ease-out,opacity .2s ease-out;
@@ -5817,7 +5817,7 @@ button.botui-actions-buttons-button {
     font-weight:800;
     height:56px;
     line-height:56px;
-    padding-left:6px;
+    padding-left:1px;
     padding-right:15px;
     padding-top:11px;
     text-decoration-line:none
