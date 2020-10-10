@@ -3945,6 +3945,9 @@ li.feature-2 {
         width: 100px !important;
         height: 100px !important;
     }
+    .center-text {
+        font-size: 40px !important;
+    }
     .header-info {
         width: 90% !important;
     }
